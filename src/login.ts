@@ -19,13 +19,12 @@ export class GoogleLogin {
 
   async login(user: string, password: string) {
     await this.page.goto(this.baseUrl);
-    await this.user.waitFor({ state: "visible" });
+    await this.page.waitForTimeout(2 * 1000);
     await this.user.fill(user);
     await this.userNext.waitFor({ state: "visible" });
     await this.userNext.click();
-    await this.password.waitFor({ state: "visible" });
+    await this.page.waitForTimeout(2 * 1000);
     await this.password.fill(password);
-    await this.passwordNext.waitFor({ state: "visible" });
     await this.passwordNext.click();
   }
 }
