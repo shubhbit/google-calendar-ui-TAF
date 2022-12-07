@@ -26,8 +26,10 @@ export class GoogleLogin {
     // await this.page.waitForTimeout(2 * 1000);
     // await this.password.fill(password);
     // await this.passwordNext.click();
+    await this.page.waitForTimeout(5 * 1000);
     await this.page.locator("//input[@type='email']").fill(user);
     await this.userNext.click();
+    await this.page.waitForTimeout(5 * 1000);
     await this.page.locator("//input[@type='password']").fill(password);
     await this.passwordNext.click();
   }
