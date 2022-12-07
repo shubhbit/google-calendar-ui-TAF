@@ -18,3 +18,7 @@ export function getUser(): string {
 export function getPassword(): string {
     return `${process.env.PASSWORD}`;
   }
+
+export function randomString(): string {
+  return (Math.random() + 1).toString(36).substring(2);
+}
