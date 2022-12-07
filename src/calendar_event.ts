@@ -27,6 +27,7 @@ export class CalendarEvents {
   async goto(user: string, password: string) {
     const google = new GoogleLogin(this.page);
     await google.login(user, password);
+    await this.page.waitForTimeout(2 * 1000);
     await this.page.waitForURL(`${google.baseUrl}/u/0/r`)
   }
   async createEvent(title: string, startTime: string, endTime: string) {
